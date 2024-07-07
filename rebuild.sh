@@ -12,7 +12,7 @@ fi
 pushd ~/nixos-config/
 
 # Edit your config
-code --wait .
+$EDITOR .
 
 
 # Early return if no changes were detected (thanks @singiamtel!)
