@@ -3,8 +3,9 @@
     (with pkgs.vscode-extensions; [
       golang.go
       rust-lang.rust-analyzer
-      vadimcn.vscode-lldb
-      vlanguage.vscode-vlang
+      serayuzgur.crates
+      ms-python.python
+      # bbenoist."Nix"
       # ...
     ])
     ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
