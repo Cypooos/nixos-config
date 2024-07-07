@@ -153,7 +153,7 @@
     #  wget
   ];
 
-  environment.sessionVariables = rec {
+  environment.variables = rec {
     EDITOR = "code --wait";
   };
 
