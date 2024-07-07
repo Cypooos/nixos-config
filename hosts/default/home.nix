@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  inputs,
   ...
 }: {
   # Home Manager needs a bit of information about you and the paths it should
@@ -70,7 +71,15 @@
   #  /etc/profiles/per-user/coda/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    EDITOR = "code";
+    EDITOR = "code --wait";
+  };
+
+  programs.bash = {
+    enable = true;
+    shellAliases = {
+      g = "git";
+      "..." = "cd ../..";
+    };
   };
 
   # Let Home Manager install and manage itself.
