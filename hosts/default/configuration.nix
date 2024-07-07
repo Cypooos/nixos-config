@@ -153,9 +153,7 @@
     #  wget
   ];
 
-  environment.variables = rec {
-    EDITOR = "code --wait";
-  };
+  environment.variables.EDITOR = "code --wait";
 
   #programs.steam = {
   #  enable = true;
