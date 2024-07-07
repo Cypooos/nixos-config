@@ -5,7 +5,7 @@
       rust-lang.rust-analyzer
       serayuzgur.crates
       ms-python.python
-      # bbenoist."Nix"
+      bbenoist.nix
       # ...
     ])
     ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
