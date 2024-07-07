@@ -8,9 +8,13 @@
   ...
 }: {
   imports = [
+    inputs.nix-colors.homeManagerModules.default
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ./vscode.nix
   ];
+
+  colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -103,6 +107,26 @@
     users = {
       "coda" = import ./home.nix;
     };
+  };
+
+  fonts = {
+    fontDir.enable = true;
+    fonts = with pkgs; [
+      corefonts
+      inconsolata
+      terminus_font
+      dejavu_fonts
+      ubuntu_font_family
+      source-code-pro
+      source-sans-pro
+      source-serif-pro
+      roboto-mono
+      roboto
+      overpass
+      libre-baskerville
+      font-awesome
+      julia-mono
+    ];
   };
 
   # Install firefox.
