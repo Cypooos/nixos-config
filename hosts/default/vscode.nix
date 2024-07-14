@@ -6,6 +6,7 @@
       serayuzgur.crates
       ms-python.python
       bbenoist.nix
+      tamasfe.even-better-toml
       # ...
     ])
     ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
