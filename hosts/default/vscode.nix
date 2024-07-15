@@ -5,6 +5,7 @@
       rust-lang.rust-analyzer
       serayuzgur.crates
       ms-python.python
+      ms-python.debugpy
       bbenoist.nix
       tamasfe.even-better-toml
       # ...
