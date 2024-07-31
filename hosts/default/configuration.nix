@@ -146,6 +146,7 @@
     gnumake
     nano
     python3
+    python311Packages.numpy
     alejandra
     libnotify
     neofetch
