@@ -8,6 +8,8 @@
       ms-python.debugpy
       bbenoist.nix
       tamasfe.even-better-toml
+      tomoki1207.pdf
+      nvarner.typst-lsp
       # ...
     ])
     ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
