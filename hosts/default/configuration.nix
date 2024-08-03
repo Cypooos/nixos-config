@@ -128,6 +128,12 @@
       julia-mono
     ];
   };
+  fonts.packages = with pkgs; [
+    font-awesome
+    powerline-fonts
+    powerline-symbols
+    (nerdfonts.override {fonts = ["NerdFontsSymbolsOnly"];})
+  ];
 
   # Install firefox.
   programs.firefox.enable = true;
