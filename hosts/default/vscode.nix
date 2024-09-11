@@ -10,6 +10,7 @@
       tamasfe.even-better-toml
       tomoki1207.pdf
       nvarner.typst-lsp
+      ms-vscode.cpptools
       # ...
     ])
     ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
