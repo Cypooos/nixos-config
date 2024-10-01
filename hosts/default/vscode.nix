@@ -11,6 +11,7 @@
       tomoki1207.pdf
       nvarner.typst-lsp
       ms-vscode.cpptools
+      # pest.pest-ide-tools
       # ...
     ])
     ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
