@@ -11,6 +11,7 @@
       tomoki1207.pdf
       nvarner.typst-lsp
       ms-vscode.cpptools
+      mhutchie.git-graph
       # pest.pest-ide-tools
       # ...
     ])
