@@ -3,7 +3,7 @@
     (with pkgs.vscode-extensions; [
       golang.go
       rust-lang.rust-analyzer
-      serayuzgur.crates
+      # fill-labs.dependi
       ms-python.python
       ms-python.debugpy
       bbenoist.nix
