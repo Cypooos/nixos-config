@@ -12,6 +12,8 @@
       nvarner.typst-lsp
       ms-vscode.cpptools
       mhutchie.git-graph
+      # bianxianyang.htmlplay
+      ecmel.vscode-html-css
       # pest.pest-ide-tools
       # ...
     ])
