@@ -12,12 +12,18 @@
       nvarner.typst-lsp
       ms-vscode.cpptools
       mhutchie.git-graph
+
       # bianxianyang.htmlplay
       ecmel.vscode-html-css
       # pest.pest-ide-tools
       # ...
     ])
     ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+      # {
+      #   name = "coq";
+      #   publisher = "ruoz";
+      #   version = "0.3.2";
+      # }
       # {...}
     ];
 

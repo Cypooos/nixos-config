@@ -12,6 +12,7 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./vscode.nix
+    # ./../../etc/nixos/cachix.nix
   ];
 
   colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;
