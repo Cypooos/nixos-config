@@ -7,7 +7,7 @@
   inputs,
   ...
 }@args: 
-let graphic = args.graphic in
+let graphic = args.graphic; in
 {
 
   imports = if (graphic == "hyprland") then 
