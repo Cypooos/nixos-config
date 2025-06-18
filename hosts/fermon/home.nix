@@ -11,12 +11,10 @@
     sessionVariables = { EDITOR = "code --wait"; };
   };
 
+  
+  programs.kitty.enable = true; # required for the default Hyprland config
+  wayland.windowManager.hyprland.enable = true; # enable Hyprland
 
-
-  wayland.windowManager.hyprland = if (graphic == "hyprland") then {
-    enable = true;
-    xwayland.enable = true;
-  } else {};
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
   # introduces backwards incompatible changes.
