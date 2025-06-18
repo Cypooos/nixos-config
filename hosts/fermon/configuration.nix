@@ -10,8 +10,8 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    # ./../../vscode.nix
-    # ./../../plasma.nix
+    ./../../vscode.nix
+    ./../../plasma.nix
     # ./../../hyprland.nix
     # ./../../waybar.nix
   ];
@@ -112,7 +112,7 @@
 
   fonts = {
     fontDir.enable = true;
-    fonts = with pkgs; [
+    packages = with pkgs; [
       corefonts
       inconsolata
       terminus_font
