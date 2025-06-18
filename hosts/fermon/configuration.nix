@@ -10,10 +10,10 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ./../../vscode.nix
-    ./../../plasma.nix
-    # ./../../hyprland.nix
-    # ./../../waybar.nix
+    ./../../modules/vscode.nix
+    #./../../modules/plasma.nix
+    ./../../hyprland.nix
+    ./../../waybar.nix
   ];
 
   # Bootloader.
