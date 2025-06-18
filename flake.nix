@@ -3,13 +3,18 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    nix-colors.url = "github:misterio77/nix-colors";
+    hyprland = {
+      url = "github:hyprwm/Hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland"; 
+    };
   };
 
   outputs = {
@@ -20,10 +25,11 @@
     nixosConfigurations.default = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
-        ./hosts/default/configuration.nix
+        ./hosts/fermon/configuration.nix
         inputs.home-manager.nixosModules.default
       ];
     };
+    nixosConfigurations.fermon = nixosConfigurations.default;
     nixosConfigurations.server = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [

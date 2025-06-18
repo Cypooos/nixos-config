@@ -8,20 +8,19 @@
   ...
 }: {
   imports = [
-    inputs.nix-colors.homeManagerModules.default
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ./vscode.nix
-    # ./../../etc/nixos/cachix.nix
+    ./../../vscode.nix
+    ./../../hyprland.nix
+    ./../../plasma.nix
+    ./../../waybar.nix
   ];
-
-  colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "fermon"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
@@ -51,19 +50,7 @@
     LC_TIME = "fr_FR.UTF-8";
   };
 
-  # Enable the X11 windowing system.
-  # You can disable this if you're only using the Wayland session.
-  services.xserver.enable = true;
 
-  # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "fr";
-    variant = "nodeadkeys";
-  };
 
   # Configure console keymap
   console.keyMap = "fr";
