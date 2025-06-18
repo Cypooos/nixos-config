@@ -11,9 +11,9 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./../../vscode.nix
-    ./../../hyprland.nix
     ./../../plasma.nix
-    ./../../waybar.nix
+    # ./../../hyprland.nix
+    # ./../../waybar.nix
   ];
 
   # Bootloader.

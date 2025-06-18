@@ -8,7 +8,7 @@
     username = "coda"; 
     homeDirectory = "/home/coda";
     sessionVariables = { EDITOR = "code --wait"; };
-  }
+  };
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
