@@ -16,7 +16,9 @@
     #./../../modules/waybar.nix
   ];
 
-  programs.hyprland.enabled = true;
+  programs.hyprland = {
+    enable=true;
+  };
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
