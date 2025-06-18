@@ -7,9 +7,10 @@
   inputs,
   ...
 }@args: 
+let graphic = args.graphic in
 {
 
-  imports = if (args.graphic == "hyprland") then 
+  imports = if (graphic == "hyprland") then 
     [
       ./hardware-configuration.nix
       ./../../modules/vscode.nix
@@ -21,9 +22,9 @@
       ./../../modules/plasma.nix
     ];
 
-  system.nixos.label = args.graphic;
+  system.nixos.label = graphic;
 
-  programs.hyprland.enable = (args.graphic == "hyprland"); 
+  programs.hyprland.enable = (graphic == "hyprland"); 
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
