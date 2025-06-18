@@ -11,20 +11,19 @@
 
   imports = if (args.graphic == "hyprland") then 
     [
-      # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./../../modules/vscode.nix
-      ./../../modules/hyprland.nix
     ]
   else 
     [
-      # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./../../modules/vscode.nix
       ./../../modules/plasma.nix
     ];
 
   system.nixos.label = args.graphic;
+
+  programs.hyprland.enable = (args.graphic == "hyprland"); 
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -99,7 +98,7 @@
   };
 
   home-manager = {
-    extraSpecialArgs = {inherit inputs;};
+    extraSpecialArgs = {inherit inputs graphic;};
     users = {
       "coda" = import ./home.nix;
     };

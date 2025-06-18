@@ -38,7 +38,7 @@
         ];
       };
       nixosConfigurations.fermonHypr = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs; graphic="hypr";};
+        specialArgs = {inherit inputs; graphic="hyprland";};
         modules = [
           ./hosts/fermon/configuration.nix
           inputs.home-manager.nixosModules.default
