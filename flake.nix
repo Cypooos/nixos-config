@@ -21,21 +21,25 @@
     self,
     nixpkgs,
     ...
-  } @ inputs: {
-    nixosConfigurations.default = nixpkgs.lib.nixosSystem {
+  } @ inputs: 
+  let 
+    default = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
         ./hosts/fermon/configuration.nix
         inputs.home-manager.nixosModules.default
       ];
     };
-    nixosConfigurations.fermon = nixosConfigurations.default;
-    nixosConfigurations.server = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
-      modules = [
-        ./hosts/server/configuration.nix
-        inputs.home-manager.nixosModules.default
-      ];
+  in
+    {
+      nixosConfigurations.default = default;
+      nixosConfigurations.fermon = default;
+      nixosConfigurations.server = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;};
+        modules = [
+          ./hosts/server/configuration.nix
+          inputs.home-manager.nixosModules.default
+        ];
+      };
     };
-  };
 }
