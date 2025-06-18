@@ -11,9 +11,9 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./../../modules/vscode.nix
-    #./../../modules/plasma.nix
-    ./../../hyprland.nix
-    ./../../waybar.nix
+    ./../../modules/plasma.nix
+    #./../../hyprland.nix
+    #./../../waybar.nix
   ];
 
   # Bootloader.
@@ -49,21 +49,6 @@
     LC_TELEPHONE = "fr_FR.UTF-8";
     LC_TIME = "fr_FR.UTF-8";
   };
-
-
-    # Enable the X11 windowing system.
-    # You can disable this if you're only using the Wayland session.
-    services.xserver.enable = true;
-
-    # Enable the KDE Plasma Desktop Environment.
-    services.displayManager.sddm.enable = true;
-    services.desktopManager.plasma6.enable = true;
-
-    # Configure keymap in X11
-    services.xserver.xkb = {
-        layout = "fr";
-        variant = "nodeadkeys";
-    };
 
   # Configure console keymap
   console.keyMap = "fr";
@@ -157,6 +142,7 @@
     gg
     vlc
     cachix
+    vscode
     # minecraft
     # anki-bin
     #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
