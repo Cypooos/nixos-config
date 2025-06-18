@@ -15,6 +15,9 @@
 
         settings = {
 
+            input = {
+                kb_layout = "fr";
+            };
 
             decoration = {
                 rounding = 10;
