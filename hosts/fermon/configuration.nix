@@ -11,10 +11,12 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./../../modules/vscode.nix
-    # ./../../modules/plasma.nix
-    ./../../modules/hyprland.nix
-    # ./../../modules/waybar.nix
+    #./../../modules/plasma.nix
+    #./../../modules/hyprland.nix
+    #./../../modules/waybar.nix
   ];
+
+  programs.hyprland.enabled = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
