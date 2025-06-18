@@ -12,8 +12,8 @@
     ./hardware-configuration.nix
     ./../../modules/vscode.nix
     # ./../../modules/plasma.nix
-    ./../../hyprland.nix
-    # ./../../waybar.nix
+    ./../../modules/hyprland.nix
+    # ./../../modules/waybar.nix
   ];
 
   # Bootloader.
