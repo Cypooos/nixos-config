@@ -23,7 +23,7 @@
     ...
   } @ inputs: 
     {
-      nixosConfigurations.default = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.fermon = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};
         modules = [
           ./hosts/fermon/configuration.nix
