@@ -12,12 +12,12 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./../../modules/vscode.nix
-    ./../../modules/plasma.nix
-    #./../../modules/hyprland.nix
-    #./../../modules/waybar.nix
+    #./../../modules/plasma.nix
+    ./../../modules/hyprland.nix
+    ./../../modules/waybar.nix
   ];
 
-  system.nixos.label = "PlasmaKDE";
+  system.nixos.label = "Hyprland (Test)";
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
