@@ -26,6 +26,18 @@ let graphic = args.graphic; in
 
   programs.hyprland.enable = (graphic == "hyprland"); 
 
+  services.greetd = if (graphic == "hyprland") then {
+    enable = true;
+    settings = rec {
+      initial_session = {
+        command = "${pkgs.hyprland}/bin/hyprland";
+        user = "coda";
+      };
+      default_session = initial_session;
+    };
+  } else {};
+
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
