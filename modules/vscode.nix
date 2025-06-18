@@ -9,7 +9,7 @@
       bbenoist.nix
       tamasfe.even-better-toml
       tomoki1207.pdf
-      nvarner.typst-lsp
+      # nvarner.typst-lsp
       ms-vscode.cpptools
       mhutchie.git-graph
 
