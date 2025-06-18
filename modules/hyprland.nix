@@ -1,5 +1,5 @@
-{ ... }: {
-
+{ ... }: { config = {
+    
     wayland.windowManager.hyprland = {
         enable = true;
 
@@ -60,5 +60,5 @@
                 "$mod,j,movefocus,d"
             ];
         };
-    }
+    };};
 }
