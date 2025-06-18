@@ -6,18 +6,25 @@
   pkgs,
   inputs,
   ...
-}: 
+}@args: 
 {
-  imports = [
-    # Include the results of the hardware scan.
-    ./hardware-configuration.nix
-    ./../../modules/vscode.nix
-    #./../../modules/plasma.nix
-    ./../../modules/hyprland.nix
-    ./../../modules/waybar.nix
-  ];
 
-  system.nixos.label = "Hyprland (Test)";
+  imports = if (args.graphic == "hyprland") then 
+    [
+      # Include the results of the hardware scan.
+      ./hardware-configuration.nix
+      ./../../modules/vscode.nix
+      ./../../modules/hyprland.nix
+    ]
+  else 
+    [
+      # Include the results of the hardware scan.
+      ./hardware-configuration.nix
+      ./../../modules/vscode.nix
+      ./../../modules/plasma.nix
+    ];
+
+  system.nixos.label = args.graphic;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;

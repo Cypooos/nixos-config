@@ -24,7 +24,21 @@
   } @ inputs: 
     {
       nixosConfigurations.fermon = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
+        specialArgs = {inherit inputs; graphic="plasma";};
+        modules = [
+          ./hosts/fermon/configuration.nix
+          inputs.home-manager.nixosModules.default
+        ];
+      };
+      nixosConfigurations.fermonPlasma = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs; graphic="plasma";};
+        modules = [
+          ./hosts/fermon/configuration.nix
+          inputs.home-manager.nixosModules.default
+        ];
+      };
+      nixosConfigurations.fermonHypr = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs; graphic="hypr";};
         modules = [
           ./hosts/fermon/configuration.nix
           inputs.home-manager.nixosModules.default
