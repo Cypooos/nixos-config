@@ -1,16 +1,14 @@
 {pkgs,...}:
 {
 
-    #programs.hyprland = {
-    #    # Install the packages from nixpkgs
-    #    enable = true;
-    #    # Whether to enable XWayland
-    #    xwayland.enable = true;
-    # 
-    #    # Optional
-    #    # Whether to enable patching wlroots for better Nvidia support
-    #    #enableNvidiaPatches = true;
-    #};
+    programs.hyprland = {
+        enable = true;
+    };
+
+    environment.systemPackages = with pkgs; [
+        hyprpaper
+        waybar
+    ];
 
     services.greetd = {
         enable = true;

@@ -103,16 +103,16 @@ let graphic = args.graphic; in
     users = {
       "coda" = import ./home.nix;
     };
-    modules = [
-      {
-        wayland.windowManager.hyprland = {
-          enable = true;
-          # set the flake package
-          package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-          portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-        };
-      }
-    ];
+    # modules = [
+    #   {
+    #     wayland.windowManager.hyprland = {
+    #       enable = true;
+    #       # set the flake package
+    #       package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    #       portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+    #     };
+    #   }
+    # ];
   };
 
   fonts = {
