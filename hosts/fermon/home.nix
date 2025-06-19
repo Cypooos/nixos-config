@@ -2,7 +2,7 @@
 
   home = {
     username = "cypooos"; 
-    homeDirectory = "/home/coda";
+    homeDirectory = "/home/cypooos";
     sessionVariables = { EDITOR = "code --wait"; };
     stateVersion = "24.05";
   };

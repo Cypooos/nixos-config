@@ -133,8 +133,6 @@
 
   environment.variables.EDITOR = "code --wait";
 
-  system.copySystemConfiguration = true;
-
   system.stateVersion = "25.11"; # Do not change
 
 }
