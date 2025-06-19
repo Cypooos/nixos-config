@@ -13,7 +13,7 @@
         system = "x86_64-linux";
         specialArgs = {gui="hyprland";};
         modules = [
-          ./configuration.nix
+          ./hosts/fermon/configuration.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
@@ -27,7 +27,7 @@
         system = "x86_64-linux";
         specialArgs = {gui="plasma";};
         modules = [
-          ./configuration.nix
+          ./hosts/fermon/configuration.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
