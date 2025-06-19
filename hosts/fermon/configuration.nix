@@ -43,7 +43,7 @@ let graphic = args.graphic; in
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "fermon"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
