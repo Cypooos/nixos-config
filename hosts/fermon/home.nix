@@ -4,7 +4,7 @@
   ...
 }: {
 
-  imports = if (graphic == "hyprland") then [./../../modules/hyprland.nix] else [];
+  imports = if (graphic == "hyprland") then [./../../modules/hyprland-conf.nix] else [];
 
   # Home Manager needs a bit of information about you and the paths it should
   # manage.

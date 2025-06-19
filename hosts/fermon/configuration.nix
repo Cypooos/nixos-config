@@ -14,6 +14,7 @@ let graphic = args.graphic; in
     [
       ./hardware-configuration.nix
       ./../../modules/vscode.nix
+      ./../../modules/hyprland.nix
     ]
   else 
     [
@@ -23,19 +24,6 @@ let graphic = args.graphic; in
     ];
 
   system.nixos.label = graphic;
-
-  programs.hyprland.enable = (graphic == "hyprland"); 
-
-  services.greetd = if (graphic == "hyprland") then {
-    enable = true;
-    settings = rec {
-      initial_session = {
-        command = "${pkgs.hyprland}/bin/hyprland";
-        user = "coda";
-      };
-      default_session = initial_session;
-    };
-  } else {};
 
 
   # Bootloader.

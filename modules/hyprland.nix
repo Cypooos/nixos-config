@@ -1,18 +1,26 @@
 {pkgs,...}:
 {
-    programs.kitty.enable = true; # required for the default Hyprland config
-    wayland.windowManager.hyprland = {
+
+    #programs.hyprland = {
+    #    # Install the packages from nixpkgs
+    #    enable = true;
+    #    # Whether to enable XWayland
+    #    xwayland.enable = true;
+    # 
+    #    # Optional
+    #    # Whether to enable patching wlroots for better Nvidia support
+    #    #enableNvidiaPatches = true;
+    #};
+
+    services.greetd = {
         enable = true;
-        package = pkgs.hyprland;
-        systemd = {
-            enable = true;
-            enableXdgAutostart = true;
-            variables = ["--all"];
+        settings = rec {
+        initial_session = {
+            command = "${pkgs.hyprland}/bin/hyprland";
+            user = "coda";
         };
-        xwayland = {
-            enable = true;
+        default_session = initial_session;
         };
-        extraConfig = builtins.readFile ./hyprland.conf;
     };
 
 }
