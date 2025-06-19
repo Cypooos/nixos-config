@@ -25,7 +25,7 @@
       };
       fermonPlasma = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = {gui="plasma"};
+        specialArgs = {gui="plasma";};
         modules = [
           ./configuration.nix
           home-manager.nixosModules.home-manager
