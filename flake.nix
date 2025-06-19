@@ -9,9 +9,9 @@
 
   outputs = {self, nixpkgs, home-manager} : {
     nixosConfigurations = {
-      cypooosHypr = nixpkgs.lib.nixosSystem {
+      fermonHypr = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = {gui="hyprland"};
+        specialArgs = {gui="hyprland";};
         modules = [
           ./configuration.nix
           home-manager.nixosModules.home-manager
@@ -23,7 +23,7 @@
           }
         ];
       };
-      cypooosPlasma = nixpkgs.lib.nixosSystem {
+      fermonPlasma = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {gui="plasma"};
         modules = [
