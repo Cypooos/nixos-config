@@ -9,9 +9,10 @@
     else
       [./../../modules/plasma.nix]);
 
+  # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-
+  
   networking.hostName = "fermon"; 
   system.nixos.label = gui + "-test";
 
