@@ -40,14 +40,6 @@
       nixosConfigurations.fermonHypr = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs; graphic="hyprland";};
         modules = [
-          {
-            wayland.windowManager.hyprland = {
-              enable = true;
-              # set the flake package
-              package = inputs.hyprland.packages.${nixpkgs.stdenv.hostPlatform.system}.hyprland;
-              portalPackage = inputs.hyprland.packages.${nixpkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-            };
-          }
           ./hosts/fermon/configuration.nix
           inputs.home-manager.nixosModules.default
         ];
