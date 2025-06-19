@@ -1,55 +1,42 @@
 {
-  description = "Nixos config flake";
+  description = "My nixos config";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    hyprland = {
-      url = "github:hyprwm/Hyprland";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    hyprland-plugins = {
-      url = "github:hyprwm/hyprland-plugins";
-      inputs.hyprland.follows = "hyprland"; 
-    };
+    home-manager.url = "github:nix-community/home-manager";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    ...
-  } @ inputs: 
-    {
-      nixosConfigurations.fermon = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs; graphic="plasma";};
+  outputs = {self, nixpkgs, home-manager} : {
+    nixosConfigurations = {
+      cypooosHypr = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = {gui="hyprland"};
         modules = [
-          ./hosts/fermon/configuration.nix
-          inputs.home-manager.nixosModules.default
+          ./configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.cypooos = ./hosts/fermon/home.nix;
+            home-manager.extraSpecialArgs = {gui="hyprland";};
+          }
         ];
       };
-      nixosConfigurations.fermonPlasma = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs; graphic="plasma";};
+      cypooosPlasma = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = {gui="plasma"};
         modules = [
-          ./hosts/fermon/configuration.nix
-          inputs.home-manager.nixosModules.default
-        ];
-      };
-      nixosConfigurations.fermonHypr = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs; graphic="hyprland";};
-        modules = [
-          ./hosts/fermon/configuration.nix
-          inputs.home-manager.nixosModules.default
-        ];
-      };
-      nixosConfigurations.server = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
-        modules = [
-          ./hosts/server/configuration.nix
-          inputs.home-manager.nixosModules.default
+          ./configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.cypooos = ./hosts/fermon/home.nix;
+            home-manager.extraSpecialArgs = {gui="plasma";};
+          }
         ];
       };
     };
+  };
 }
