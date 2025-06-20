@@ -5,9 +5,26 @@
       ./hardware-configuration.nix
       ./../../modules/vscode.nix
     ] ++ (if (gui == "hyprland") then
-      []
+      [[./../../modules/hyprland.nix]]
     else
-      [./../../modules/plasma.nix]);
+      [./../../modules/plasma.nix]
+    );
+  
+  sops.age.keyFile = "/etc/sops/age/keys.txt";
+  sops.defaultSopsFile = ./../../secrets.enc.yaml;
+  systemd.tmpfiles.rules = [
+    "d /home/cypooos/.ssh 0700 cypooos cypooos"
+  ];
+  sops.secrets.ssh_github = {
+    mode = "0600";
+    owner = "cypooos";
+    path = "/home/cypooos/.ssh/github";
+  };
+  sops.secrets.ssh_github_pub = {
+    mode = "0600";
+    owner = "cypooos";
+    path = "/home/cypooos/.ssh/github.pub";
+  };
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -78,6 +95,15 @@
       tree
     ];
   };
+
+  services.openssh = {
+    enable = true;
+    ports = [ 22 ];
+    settings = {
+        PasswordAuthentication = false;
+        AllowUsers = [ "cypooos" ]; 
+    };
+};
 
   fonts = {
     fontDir.enable = true;

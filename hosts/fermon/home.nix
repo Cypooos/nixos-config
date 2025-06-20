@@ -14,5 +14,13 @@
       nix-direnv.enable = true;
     };
     home-manager.enable = true;
+    git = {
+      enable = true;
+      userName = "Cypooos";
+      userEmail = "60020572+Cypooos@users.noreply.github.com";
+      extraConfig = {
+        init.defaultBranch = "main";
+      };
+    };
   };
 }
