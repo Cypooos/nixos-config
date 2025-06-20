@@ -4,6 +4,8 @@
         environment.systemPackages = [
             # ... other packages
             pkgs.kitty # required for the default Hyprland config
+            pkgs.brightnessctl
+            pkgs.waybar
         ];
     };
 }
