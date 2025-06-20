@@ -5,7 +5,7 @@
       ./hardware-configuration.nix
       ./../../modules/vscode.nix
     ] ++ (if (gui == "hyprland") then
-      [[./../../modules/hyprland.nix]]
+      [./../../modules/hyprland.nix]
     else
       [./../../modules/plasma.nix]
     );

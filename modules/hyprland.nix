@@ -5,5 +5,5 @@
             # ... other packages
             pkgs.kitty # required for the default Hyprland config
         ];
-    }
+    };
 }

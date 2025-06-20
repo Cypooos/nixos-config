@@ -19,6 +19,13 @@
     };
   }; 
 
+  home.file = {
+    ".config/hypr/hyprland.conf" = {
+      executable = false;
+      source = ./../../modules/hyprland.conf;
+    };
+  }; 
+
   programs = {
     direnv = {
       enable = true;
