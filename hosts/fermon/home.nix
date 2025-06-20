@@ -7,6 +7,18 @@
     stateVersion = "24.05";
   };
 
+  home.file = {
+    ".ssh/config" = {
+      executable = false;
+      text = ''
+        Host github.com
+          HostName github.com
+          User git
+          IdentityFile ~/.ssh/github
+      '';
+    };
+  }; 
+
   programs = {
     direnv = {
       enable = true;
