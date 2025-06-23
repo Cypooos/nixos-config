@@ -24,6 +24,18 @@
       executable = false;
       source = ./../../modules/hyprland.conf;
     };
+    # ".config/waybar" = {
+    #   executable = false;
+    #   source = ./../../modules/waybar;
+    # };
+    "wallpaper.mp4" = {
+      executable = false;
+      source = ./../../medias/wallpapers/silverwolf.mp4;
+    };
+    "wallpaper.jpg" = {
+      executable = false;
+      source = ./../../medias/wallpapers/wallpaper.jpg;
+    };
   }; 
 
   programs = {
