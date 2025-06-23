@@ -9,7 +9,8 @@
     "margin-left": 8,
 
     "modules-left": [
-        "sway/workspaces"
+        "hyprland/workspaces",
+        "hyprland/window"
     ],
 
     "modules-center": [
@@ -26,11 +27,24 @@
         "pulseaudio"
     ],
 
-    "sway/workspaces": {
-        "disable-scroll": true,
-        "all-outputs": true,
-        "tooltip": false
+    "hyprland/workspaces": {
+        "format": "{icon}&{windows}",
+        "format-window-separator": "-",
+        "window-rewrite-default": "",
+        "window-rewrite": {
+            "title<.*youtube.*>": "",
+            "class<firefox>": "",
+            "class<firefox> title<.*github.*>": "",
+            "foot": "",
+            "code": "󰨞"
+        }
     },
+
+    "hyprland/window":{
+        "format":"current:`{title}`",
+        "icon":true
+    },
+
 
     "tray": {
         "spacing": 10,

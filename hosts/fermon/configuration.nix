@@ -129,6 +129,7 @@
       overpass
       libre-baskerville
       font-awesome
+      nerd-fonts.iosevka
       julia-mono
     ];
   };
@@ -163,6 +164,7 @@
     cachix
     vscode
     typst
+    font-awesome
     # minecraft
     # anki-bin
     #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
