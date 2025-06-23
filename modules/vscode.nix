@@ -12,7 +12,7 @@
       # nvarner.typst-lsp
       ms-vscode.cpptools
       mhutchie.git-graph
-
+      myriad-dreamin.tinymist
       # bianxianyang.htmlplay
       ecmel.vscode-html-css
       # pest.pest-ide-tools
