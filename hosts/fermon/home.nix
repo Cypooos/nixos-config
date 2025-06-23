@@ -25,11 +25,11 @@
       source = ./../../modules/hyprland.conf;
     };
     # from https://github.com/mubin6th/MinimalSway/blob/main/waybar/
-    ".config/waybar" = {
+    ".config/waybar/config" = {
       executable = false;
       source = ./../../modules/waybar;
     };
-    ".config/waybar.css" = {
+    ".config/waybar/style.css" = {
       executable = false;
       source = ./../../modules/waybar.css;
     };
