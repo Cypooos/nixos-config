@@ -24,10 +24,15 @@
       executable = false;
       source = ./../../modules/hyprland.conf;
     };
-    # ".config/waybar" = {
-    #   executable = false;
-    #   source = ./../../modules/waybar;
-    # };
+    # from https://github.com/mubin6th/MinimalSway/blob/main/waybar/
+    ".config/waybar" = {
+      executable = false;
+      source = ./../../modules/waybar;
+    };
+    ".config/waybar.css" = {
+      executable = false;
+      source = ./../../modules/waybar.css;
+    };
     "wallpaper.mp4" = {
       executable = false;
       source = ./../../medias/wallpapers/silverwolf.mp4;
