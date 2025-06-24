@@ -10,7 +10,9 @@
                 kdePackages.qtvirtualkeyboard
             ];
         };
+
         programs.hyprland.enable = true;
+
         environment.systemPackages = with pkgs; [
             (pkgs.callPackage ./sddm-astronaut-theme.nix { 
                 theme = "hyprland_kath";
@@ -21,6 +23,8 @@
             waybar
             mpvpaper
             sddm-astronaut
+            rofi-wayland
+            yazi
         ];
     };
 }
