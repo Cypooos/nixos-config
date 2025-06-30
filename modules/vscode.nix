@@ -15,6 +15,7 @@
       myriad-dreamin.tinymist
       # bianxianyang.htmlplay
       ecmel.vscode-html-css
+      james-yu.latex-workshop
       # pest.pest-ide-tools
       # ...
     ])
