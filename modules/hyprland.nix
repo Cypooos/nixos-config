@@ -25,6 +25,7 @@
             sddm-astronaut
             rofi-wayland
             yazi
+            hyprshot
         ];
     };
 }

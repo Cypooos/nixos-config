@@ -17,6 +17,10 @@
           IdentityFile ~/.ssh/github
       '';
     };
+    ".bashrc" = {
+      executable = true;
+      text = ''eval "$(direnv hook bash)"'';
+    };
   }; 
 
   home.file = {
@@ -46,7 +50,7 @@
   programs = {
     direnv = {
       enable = true;
-      enableBashIntegration = true; # see note on other shells below
+      enableBashIntegration = true;
       nix-direnv.enable = true;
     };
     home-manager.enable = true;
