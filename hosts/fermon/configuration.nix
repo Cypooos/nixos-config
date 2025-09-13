@@ -1,5 +1,6 @@
 { config, lib, pkgs, gui, ... }:
 {
+  
   imports =
     [
       ./hardware-configuration.nix
@@ -10,21 +11,9 @@
       [./../../modules/plasma.nix]
     );
   
-  sops.age.keyFile = "/etc/sops/age/keys.txt";
-  sops.defaultSopsFile = ./../../secrets.enc.yaml;
   systemd.tmpfiles.rules = [
     "d /home/cypooos/.ssh 0700 cypooos cypooos"
   ];
-  sops.secrets.ssh_github = {
-    mode = "0400";
-    owner = "cypooos";
-    path = "/home/cypooos/.ssh/github";
-  };
-  sops.secrets.ssh_github_pub = {
-    mode = "0400";
-    owner = "cypooos";
-    path = "/home/cypooos/.ssh/github.pub";
-  };
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -170,12 +159,68 @@
     bluez
     bluez-tools
     prismlauncher
+    # creative software
+    gimp3-with-plugins
+    lmms
+    # VR
+    alvr
+    vaapi-intel-hybrid
+    intel-vaapi-driver
+    intel-media-driver
+    # 3D
+    orca-slicer
     # minecraft
     # anki-bin
-    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     #  wget
   ];
-  programs.steam.enable = true;
+
+  # Allow android connection?
+  services.udev.packages = [
+    pkgs.android-udev-rules
+  ];
+
+  # --------------------------------------
+  # NVIDIA (?)
+  # --------------------------------------
+  # --------------------------------------
+  # Enable OpenGL
+  hardware.graphics = {
+    enable = true;
+  };
+
+  services.xserver.videoDrivers = ["nvidia"];
+
+  hardware.nvidia = {
+    modesetting.enable = true;
+
+    powerManagement.enable = false;
+
+    powerManagement.finegrained = false;
+
+    open = false;
+
+    nvidiaSettings = true;
+
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
+
+    prime = {
+		# Make sure to use the correct Bus ID values for your system!
+		intelBusId = "PCI:0:2:0";
+		nvidiaBusId = "PCI:1:0:0";
+    };
+  };
+  # --------------------------------------
+  # --------------------------------------
+  # --------------------------------------
+  
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source
+  };
+
+  programs.alvr = {enable = true; openFirewall = true;};
 
   environment.variables.EDITOR = "code --wait";
 
