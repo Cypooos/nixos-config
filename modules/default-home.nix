@@ -26,24 +26,24 @@
   home.file = {
     ".config/hypr/hyprland.conf" = {
       executable = false;
-      source = ./../../modules/hyprland.conf;
+      source = ./hyprland.conf;
     };
     # from https://github.com/mubin6th/MinimalSway/blob/main/waybar/
     ".config/waybar/config" = {
       executable = false;
-      source = ./../../modules/waybar;
+      source = ./waybar;
     };
     ".config/waybar/style.css" = {
       executable = false;
-      source = ./../../modules/waybar.css;
+      source = ./waybar.css;
     };
     "wallpaper.mp4" = {
       executable = false;
-      source = ./../../medias/wallpapers/silverwolf.mp4;
+      source = ./../medias/wallpapers/silverwolf.mp4;
     };
     "wallpaper.jpg" = {
       executable = false;
-      source = ./../../medias/wallpapers/wallpaper.jpg;
+      source = ./../medias/wallpapers/wallpaper.jpg;
     };
   }; 
 

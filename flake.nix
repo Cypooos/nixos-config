@@ -1,6 +1,6 @@
-# run : SOPS_AGE_KEY_FILE=/etc/sops/age/keys.txt sudo nixos-rebuild switch --flake .#fermonPlasma
+# run : sudo nixos-rebuild switch --flake .#fermonPlasma
 {
-  description = "My nixos config";
+  description = "Meow's config";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -19,7 +19,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.cypooos = ./hosts/fermon/home.nix;
+            home-manager.users.cypooos = ./modules/default-home.nix;
             home-manager.extraSpecialArgs = {gui="hyprland";};
           }
         ];
@@ -33,7 +33,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.cypooos = ./hosts/fermon/home.nix;
+            home-manager.users.cypooos = ./modules/default-home.nix;
             home-manager.extraSpecialArgs = {gui="plasma";};
           }
         ];
