@@ -38,6 +38,35 @@
           }
         ];
       };
+      # AXIUM ----------
+      axiumHypr = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = {gui="hyprland";};
+        modules = [
+          ./hosts/axium/configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.cypooos = ./modules/default-home.nix;
+            home-manager.extraSpecialArgs = {gui="hyprland";};
+          }
+        ];
+      };
+      axiumPlasma = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = {gui="plasma";};
+        modules = [
+          ./hosts/axium/configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.cypooos = ./modules/default-home.nix;
+            home-manager.extraSpecialArgs = {gui="plasma";};
+          }
+        ];
+      };
     };
   };
 }

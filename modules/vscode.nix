@@ -16,6 +16,7 @@
       # bianxianyang.htmlplay
       ecmel.vscode-html-css
       james-yu.latex-workshop
+      maximedenes.vscoq
       # pest.pest-ide-tools
       # ...
     ])

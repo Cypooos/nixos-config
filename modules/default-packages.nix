@@ -1,4 +1,4 @@
-{pkgs,...}:{
+{pkgs,nixpkgs,...}:{
 
     imports = [
         ./steam.nix
@@ -6,6 +6,7 @@
     ];
 
     config = {
+        nixpkgs.config.allowUnfree = true;
 
         # fonts
         fonts = {
