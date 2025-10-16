@@ -15,6 +15,11 @@
           HostName github.com
           User git
           IdentityFile ~/.ssh/github
+          
+        Host gitlab.com
+          HostName gitlab.com
+          User git
+          IdentityFile ~/.ssh/gitlab
       '';
     };
     ".bashrc" = {
