@@ -78,7 +78,17 @@
             vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
             #  wget
             thunderbird
+            davinci-resolve
             tor-browser
+            emacs
+            (pkgs.ffmpeg-full.override { 
+                withUnfree = false; # Allow unfree dependencies (for Nvidia features notably)
+                withMetal = false; # Use Metal API on Mac. Unfree and requires manual downloading of files
+                withMfx = false; # Hardware acceleration via the deprecated intel-media-sdk/libmfx. Use oneVPL instead (enabled by default) from Intel's oneAPI.
+                withTensorflow = false; # Tensorflow dnn backend support (Increases closure size by ~390 MiB)
+                withSmallBuild = false; # Prefer binary size to performance.
+                withDebug = false; # Build using debug options
+            })
         ];
 
     };

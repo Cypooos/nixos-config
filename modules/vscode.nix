@@ -18,6 +18,8 @@
       james-yu.latex-workshop
       maximedenes.vscoq
       # pest.pest-ide-tools
+      banacorn.agda-mode
+      # j-mueller.agda
       # ...
     ])
     ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
