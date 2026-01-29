@@ -7,8 +7,37 @@
         nix.settings.experimental-features = ["nix-command" "flakes"];
 
         # Bootloader.
-        boot.loader.systemd-boot.enable = true;
-        boot.loader.efi.canTouchEfiVariables = true;
+        boot = {
+            loader.systemd-boot.enable = true;
+            loader.efi.canTouchEfiVariables = true;
+            
+            consoleLogLevel = 3;
+            initrd.systemd.enable = true;
+            initrd.verbose = false;
+            kernelParams = [
+                "quiet"
+                "udev.log_level=3"
+                "systemd.show_status=auto"
+            ];
+            # Hide the OS choice for bootloaders.
+            # It's still possible to open the bootloader list by pressing any key
+            # It will just not appear on screen unless a key is pressed
+            loader.timeout = 0;
+
+            # plymouth, showing after LUKS unlock
+            plymouth = {
+                enable = true;
+                theme = "colorful_sliced";
+                themePackages = with pkgs; [
+                    # By default we would install all themes
+                    (adi1090x-plymouth-themes.override {
+                    selected_themes = [ "colorful_sliced" ];
+                    })
+                ];
+            };
+        };
+
+        
 
         # Define a user account. Don't forget to set a password with ‘passwd’.
         users.users.cypooos = {

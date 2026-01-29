@@ -11,6 +11,12 @@
     ".ssh/config" = {
       executable = false;
       text = ''
+        Host github.com-MillieCutie
+          HostName github.com
+          User git
+          IdentityFile ~/.ssh/millie
+          IdentitiesOnly yes
+
         Host github.com
           HostName github.com
           User git

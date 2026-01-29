@@ -6,9 +6,10 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    minegrub-theme.url = "github:Lxtharia/minegrub-theme";
   };
 
-  outputs = {self, nixpkgs, home-manager} : {
+  outputs = {self, nixpkgs, home-manager, minegrub-theme} : {
     nixosConfigurations = {
       fermonHypr = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";

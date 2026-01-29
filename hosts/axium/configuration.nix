@@ -19,6 +19,7 @@
     # services.libinput.enable = true;
 
     environment.variables.EDITOR = "code --wait";
+    environment.variables.LIBVA_DRIVER_NAME = "radeonsi";
 
     system.stateVersion = "25.05"; # Do not change
 
